@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pgq+azqKxrL/6U6suDtTFGNhRxXm8HQZ5sXHpVhaZuzZkzIKoM3cRgIpI7RU3gqFA+hz2SuPNR+Lkc6tlnDuQg==",
+  "dgSpecHash": "2OlbBQqO+1DhpibNxHTDLnTcCgiDHR7AksF2HE+xReB8d05w9Cy7BoUCG9ypt1jnWibPs7EnCl+g9EtJNC3XiQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\1458\\Documents\\UiPath\\CompareItems\\.local\\",
+  "projectFilePath": "C:\\Users\\1458\\Documents\\UiPath\\Uipath-journey\\CompareItems\\.local\\",
   "expectedPackageFiles": [
     "C:\\Users\\1458\\.nuget\\packages\\closedxml\\0.87.1\\closedxml.0.87.1.nupkg.sha512",
     "C:\\Users\\1458\\.nuget\\packages\\csvhelper\\16.0.0\\csvhelper.16.0.0.nupkg.sha512",

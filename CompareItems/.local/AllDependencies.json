@@ -8420,9 +8420,9 @@
     "restore": {
       "projectUniqueName": "CompareItems",
       "projectName": "CompareItems",
-      "projectPath": "C:\\Users\\1458\\Documents\\UiPath\\CompareItems\\.local",
+      "projectPath": "C:\\Users\\1458\\Documents\\UiPath\\Uipath-journey\\CompareItems\\.local",
       "packagesPath": "C:\\Users\\1458\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\1458\\Documents\\UiPath\\CompareItems\\.local"
+      "outputPath": "C:\\Users\\1458\\Documents\\UiPath\\Uipath-journey\\CompareItems\\.local"
     },
     "frameworks": {
       "net461": {
