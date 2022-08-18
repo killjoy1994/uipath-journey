@@ -9,7 +9,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>862,552</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>721,947</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="29">
@@ -45,7 +45,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="22">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="28">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -68,41 +68,61 @@
       <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="376,487" sap2010:WorkflowViewState.IdRef="Sequence_8">
+  <Sequence sap:VirtualizedContainerService.HintSize="376,882" sap2010:WorkflowViewState.IdRef="Sequence_8">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_ProductName" />
       <Variable x:TypeArguments="x:String" Name="str_AmazonPrice" />
       <Variable x:TypeArguments="x:String" Name="str_AmazonName" />
       <Variable x:TypeArguments="x:String" Name="str_AmazonRatings" />
+      <Variable x:TypeArguments="x:String" Name="str_FlipkartName" />
+      <Variable x:TypeArguments="x:String" Name="str_FlipkartPrice" />
+      <Variable x:TypeArguments="x:String" Name="str_FlipkartRatings" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="334,242" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Enter the Product" Title="Enter the Product">
+    <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="334,238" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Enter the Product" Title="Enter the Product">
       <ui:InputDialog.Result>
         <OutArgument x:TypeArguments="x:String">[str_ProductName]</OutArgument>
       </ui:InputDialog.Result>
     </ui:InputDialog>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke AmazonSequence workflow" sap:VirtualizedContainerService.HintSize="334,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="AmazonSequence.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke AmazonSequence workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="AmazonSequence.xaml">
       <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="In_ProductName">[str_ProductName]</InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="Out_Price">[str_AmazonPrice]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="Out_Name">[str_AmazonName]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="Out_Ratings">[str_AmazonRatings]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="Out_Image" />
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke FlipkartSequence workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="FlipkartSequence.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <OutArgument x:TypeArguments="x:String" x:Key="Out_Price">
+          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_FlipkartPrice" />
+        </OutArgument>
         <InArgument x:TypeArguments="x:String" x:Key="In_ProductName">
           <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_ProductName" />
         </InArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="Out_Price">
-          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_AmazonPrice" />
+        <OutArgument x:TypeArguments="x:String" x:Key="Out_Ratings">
+          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_FlipkartRatings" />
         </OutArgument>
         <OutArgument x:TypeArguments="x:String" x:Key="Out_Name">
-          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_AmazonName" />
-        </OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="Out_Ratings">
-          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_AmazonRatings" />
+          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_FlipkartName" />
         </OutArgument>
         <OutArgument x:TypeArguments="x:String" x:Key="Out_Image" />
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
+    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,84" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Product detail from Amazon: &quot; + str_AmazonName + &quot; &quot; + str_AmazonPrice + &quot; &quot; + str_AmazonRatings]" />
+    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,84" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[&quot;Product detail from Flipkart: &quot; + str_FlipkartName + &quot; &quot; + str_FlipkartPrice + &quot; &quot; + str_AmazonRatings]" />
   </Sequence>
 </Activity>
