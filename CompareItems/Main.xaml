@@ -98,10 +98,18 @@
     </ui:InputDialog>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke AmazonSequence workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="AmazonSequence.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="In_ProductName">[str_ProductName]</InArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="Out_Price">[str_AmazonPrice]</OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="Out_Name">[str_AmazonName]</OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="Out_Ratings">[str_AmazonRatings]</OutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="In_ProductName">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_ProductName" />
+        </InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="Out_Price">
+          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_AmazonPrice" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="Out_Name">
+          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_AmazonName" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="Out_Ratings">
+          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_AmazonRatings" />
+        </OutArgument>
         <OutArgument x:TypeArguments="x:String" x:Key="Out_Image" />
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
